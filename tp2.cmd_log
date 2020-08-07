@@ -1,0 +1,2 @@
+xst -ise "C:/Users/Data/Desktop/Travaux_Pratiques/TP_Electronique_Numérique_2/TP_2_LES_CIRCUITS_LOGIQUES_PROGRAMMABLES/Project_Code_Gray_Counter/fellague" -intstyle ise -ifn tp2.xst -ofn tp2.syr
+xst -ise "C:/Users/Data/Desktop/Travaux_Pratiques/TP_Electronique_Numérique_2/TP_2_LES_CIRCUITS_LOGIQUES_PROGRAMMABLES/Project_Code_Gray_Counter/fellague" -intstyle ise -ifn tp2.xst -ofn tp2.syr

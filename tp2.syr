@@ -1,0 +1,317 @@
+Release 8.1i - xst I.24
+Copyright (c) 1995-2005 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to ./xst/projnav.tmp
+CPU : 0.00 / 0.16 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 0.16 s | Elapsed : 0.00 / 0.00 s
+ 
+--> Reading design: tp2.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+     4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+     5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+     7.1) Device utilization summary
+     7.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "tp2.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "tp2"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : tp2
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Write Timing Constraints           : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : tp2.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+safe_implementation                : No
+Optimize Instantiated Primitives   : NO
+use_clock_enable                   : Yes
+use_sync_set                       : Yes
+use_sync_reset                     : Yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Data/Desktop/Travaux_Pratiques/TP_Electronique_Numérique_2/TP_2_LES_CIRCUITS_LOGIQUES_PROGRAMMABLES/Project_Code_Gray_Counter/tp2.vhd" in Library work.
+Architecture behavioral of Entity tp2 is up to date.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <tp2> (Architecture <behavioral>).
+Entity <tp2> analyzed. Unit <tp2> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <tp2>.
+    Related source file is "C:/Users/Data/Desktop/Travaux_Pratiques/TP_Electronique_Numérique_2/TP_2_LES_CIRCUITS_LOGIQUES_PROGRAMMABLES/Project_Code_Gray_Counter/tp2.vhd".
+WARNING:Xst:647 - Input <DIN> is never used.
+    Found 4-bit register for signal <DOUT>.
+    Found 4-bit 4-to-1 multiplexer for signal <$n0003>.
+    Found 4-bit addsub for signal <$n0004>.
+    Found 4-bit comparator less for signal <$n0007> created at line 49.
+    Found 4-bit comparator greater for signal <$n0008> created at line 55.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <tp2> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit addsub                                          : 1
+# Registers                                            : 1
+ 4-bit register                                        : 1
+# Comparators                                          : 2
+ 4-bit comparator greater                              : 1
+ 4-bit comparator less                                 : 1
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit addsub                                          : 1
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+# Comparators                                          : 2
+ 4-bit comparator greater                              : 1
+ 4-bit comparator less                                 : 1
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Loading device for application Rf_Device from file '3s500e.nph' in environment C:\Xilinx.
+
+Optimizing unit <tp2> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block tp2, actual ratio is 0.
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : tp2.ngr
+Top Level Output File Name         : tp2
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 12
+
+Cell Usage :
+# BELS                             : 10
+#      INV                         : 1
+#      LUT3_L                      : 1
+#      LUT4_L                      : 6
+#      MUXF5                       : 2
+# FlipFlops/Latches                : 4
+#      FDCE                        : 2
+#      FDPE                        : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 7
+#      IBUF                        : 3
+#      OBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       4  out of   4656     0%  
+ Number of Slice Flip Flops:             4  out of   9312     0%  
+ Number of 4 input LUTs:                 7  out of   9312     0%  
+ Number of bonded IOBs:                  8  out of    232     3%  
+ Number of GCLKs:                        1  out of     24     4%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+H                                  | BUFGP                  | 4     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 3.493ns (Maximum Frequency: 286.287MHz)
+   Minimum input arrival time before clock: 4.279ns
+   Maximum output required time after clock: 4.929ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'H'
+  Clock period: 3.493ns (frequency: 286.287MHz)
+  Total number of paths / destination ports: 21 / 4
+-------------------------------------------------------------------------
+Delay:               3.493ns (Levels of Logic = 2)
+  Source:            DOUT_2 (FF)
+  Destination:       DOUT_1 (FF)
+  Source Clock:      H rising
+  Destination Clock: H rising
+
+  Data Path: DOUT_2 to DOUT_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             6   0.591   1.082  DOUT_2 (DOUT_2)
+     LUT3_L:I1->LO         1   0.704   0.104  _n0003<1>1_SW0 (N01)
+     LUT4_L:I3->LO         1   0.704   0.000  _n0003<1>1 (_n0003<1>)
+     FDPE:D                    0.308          DOUT_1
+    ----------------------------------------
+    Total                      3.493ns (2.307ns logic, 1.186ns route)
+                                       (66.0% logic, 34.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'H'
+  Total number of paths / destination ports: 11 / 8
+-------------------------------------------------------------------------
+Offset:              4.279ns (Levels of Logic = 3)
+  Source:            DIR (PAD)
+  Destination:       DOUT_1 (FF)
+  Destination Clock: H rising
+
+  Data Path: DIR to DOUT_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   1.218   1.241  DIR_IBUF (DIR_IBUF)
+     LUT3_L:I0->LO         1   0.704   0.104  _n0003<1>1_SW0 (N01)
+     LUT4_L:I3->LO         1   0.704   0.000  _n0003<1>1 (_n0003<1>)
+     FDPE:D                    0.308          DOUT_1
+    ----------------------------------------
+    Total                      4.279ns (2.934ns logic, 1.345ns route)
+                                       (68.6% logic, 31.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'H'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.929ns (Levels of Logic = 1)
+  Source:            DOUT_0 (FF)
+  Destination:       DOUT<0> (PAD)
+  Source Clock:      H rising
+
+  Data Path: DOUT_0 to DOUT<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDPE:C->Q             7   0.591   1.066  DOUT_0 (DOUT_0)
+     OBUF:I->O                 3.272          DOUT_0_OBUF (DOUT<0>)
+    ----------------------------------------
+    Total                      4.929ns (3.863ns logic, 1.066ns route)
+                                       (78.4% logic, 21.6% route)
+
+=========================================================================
+CPU : 5.88 / 6.09 s | Elapsed : 6.00 / 6.00 s
+ 
+--> 
+
+Total memory usage is 152992 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
